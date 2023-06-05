@@ -311,55 +311,56 @@
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
-              <p style="color: rgb(255, 115, 0); text-align: start;">
-                Al agregar articulos con costo de instalacion, favor de revisar la disponibilidad de su zona
-              </p>
-              <style>
-                .container-disponibilidad {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  max-width: 44rem;
-                }
-                .container-disponibilidad input{
-                  width: 100%;
-                  border: none;
-                  background-color: #FFFEFE;
-                  padding: 10px;
-                  margin: 10px;
-                  text-align: center;
-                  outline: none;
-                }
-                .disponible{
-                display: none;
-                text-align: center;
-                color: rgb(0, 182, 0)
-                }
-                .no-disponible{
-                display: none;
-                text-align: center;
-                color: rgb(255, 39, 39)
-                }
-              </style>
-              <div class="product-form__buttons">
-                <div class="container-disponibilidad">
-                  <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP">
-                  <button
-                    class="shopify-payment-button__button shopify-payment-button__button--unbranded BUz42FHpSPncCPJ4Pr_f jjzYeefyWpPZLH9pIgyw RWJ0IfBjxIhflh4AIrUw"
-                    onclick="getDisponibilidad()">
-                    Disponibilidad instalacion
-                  </button>
-                </div>
-                <div>
-                  <p class="disponible">
-                  Instalacion disponible en su ciudad
-                  </p>
-                  <p class="no-disponible">
-                  Instalacion no disponible en su ciudad
-                  </p>
-                </div>
-              </div>
-              {% comment %} termina Dosponibilidad codigo postal {% endcomment %}
+ {% comment %} Disponibilidad codigo postal {% endcomment %}
+ <p style="color: rgb(255, 115, 0); text-align: start;">
+  Al agregar articulos con costo de instalacion, favor de revisar la disponibilidad de su zona
+</p>
+<style>
+  .container-disponibilidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 44rem;
+  }
+  .container-disponibilidad input{
+    width: 100%;
+    border: none;
+    background-color: #FFFEFE;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    outline: none;
+  }
+  .disponible{
+  display: none;
+  text-align: center;
+  color: rgb(0, 182, 0)
+  }
+  .no-disponible{
+  display: none;
+  text-align: center;
+  color: rgb(255, 39, 39)
+  }
+</style>
+<div class="product-form__buttons">
+  <div class="container-disponibilidad">
+    <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP">
+    <button
+      class="shopify-payment-button__button shopify-payment-button__button--unbranded BUz42FHpSPncCPJ4Pr_f jjzYeefyWpPZLH9pIgyw RWJ0IfBjxIhflh4AIrUw"
+      onclick="getDisponibilidad()">
+      Disponibilidad instalacion
+    </button>
+  </div>
+  <div>
+    <p class="disponible">
+    Instalacion disponible en su ciudad
+    </p>
+    <p class="no-disponible">
+    Instalacion no disponible en su ciudad
+    </p>
+  </div>
+</div>
+{% comment %} termina Dosponibilidad codigo postal {% endcomment %}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
