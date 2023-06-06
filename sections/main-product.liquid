@@ -634,10 +634,14 @@
 
     if (ciudades.includes(ciudad)) {
       alert = "Su ciudad si cuenta con cobertura para instalacion"
+      console.log(alert)
+      no_disponible.style.display = 'none'
       disponible.style.display = 'block'
 
     } else {
       alert = "Lo sentimos, su localidad no cuenta con cobertura"
+      console.log(alert)
+      disponible.style.display = 'none'
       no_disponible.style.display = 'block'
     }
   }
