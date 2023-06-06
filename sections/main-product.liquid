@@ -347,7 +347,7 @@
     <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP">
     <button
       class="shopify-payment-button__button shopify-payment-button__button--unbranded BUz42FHpSPncCPJ4Pr_f jjzYeefyWpPZLH9pIgyw RWJ0IfBjxIhflh4AIrUw"
-      onclick=getDisponibilidad()>
+      onclick="getDisponibilidad()">
       Disponibilidad instalacion
     </button>
   </div>
@@ -618,11 +618,7 @@
     }
   </script>
 </section>
-<script type="module">
-  import { getDisponibilidad } from '../helpers/dispinstalacion.js';
-
-</script>
-{% comment %} <script>
+<script>
   const ciudades = ["Culiacan", "México", "Guadalajara"]
   async function getDisponibilidad() {
     const cp = document.getElementById('inputCP').value;
@@ -646,7 +642,7 @@
       no_disponible.style.display = 'block'
     }
   }
-</script> {% endcomment %}
+</script>
 {% schema %}
 {
   "name": "t:sections.main-product.name",
