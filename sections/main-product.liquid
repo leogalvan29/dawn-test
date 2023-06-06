@@ -618,8 +618,11 @@
     }
   </script>
 </section>
-
-<script>
+<script type="module">
+  import { getDisponibilidad } from './models/student.js';
+  getDisponibilidad()
+</script>
+{% comment %} <script>
   const ciudades = ["Culiacan", "México", "Guadalajara"]
   async function getDisponibilidad() {
     const cp = document.getElementById('inputCP').value;
@@ -643,8 +646,7 @@
       no_disponible.style.display = 'block'
     }
   }
-</script>
-
+</script> {% endcomment %}
 {% schema %}
 {
   "name": "t:sections.main-product.name",
