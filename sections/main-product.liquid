@@ -324,7 +324,7 @@
   }
   .container-disponibilidad input{
     width: 100%;
-    border: 1px black solid;
+    border: none;
     background-color: #FFFEFE;
     padding: 10px;
     margin: 10px;
@@ -348,10 +348,10 @@
 </style>
 <div class="product-form__buttons">
   <div class="container-disponibilidad">
-    <input type="text" placeholder="Introduce tu Codigo Postal" class="CP" id="inputCP">
+    <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP" onclick=getDisponibilidad()>
     <button
       class="shopify-payment-button__button shopify-payment-button__button--unbranded BUz42FHpSPncCPJ4Pr_f jjzYeefyWpPZLH9pIgyw RWJ0IfBjxIhflh4AIrUw"
-      onclick="getDisponibilidad()">
+      onclick=getDisponibilidad()>
       Disponibilidad instalacion
     </button>
   </div>
