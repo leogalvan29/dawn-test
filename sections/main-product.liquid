@@ -313,7 +313,7 @@
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
  {% comment %} Disponibilidad codigo postal {% endcomment %}
  <p style="color: rgb(255, 115, 0); text-align: start;">
-  Al agregar articulos con costo de instalacion, ingrese su codigo postal en el siguiente cuadro para revisar la disponibilidad
+  Antes de agregar articulos con instalacion, ingrese su codigo postal en el siguiente cuadro para revisar la disponibilidad
 </p>
 <style>
   .container-disponibilidad {
@@ -330,6 +330,9 @@
     margin: 10px;
     text-align: center;
     outline: none;
+  }
+  .inputCP{
+    border: 1px solid gray;
   }
   .disponible{
   display: none;
@@ -348,7 +351,7 @@
 </style>
 <div class="product-form__buttons">
   <div class="container-disponibilidad">
-    <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP">
+    <input type="text" placeholder="Introduce tu Codigo Postal" class="inputCP" id="inputCP">
     <button
       class="shopify-payment-button__button shopify-payment-button__button--unbranded BUz42FHpSPncCPJ4Pr_f jjzYeefyWpPZLH9pIgyw RWJ0IfBjxIhflh4AIrUw"
       onclick="getDisponibilidad()">
