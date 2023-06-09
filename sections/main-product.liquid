@@ -643,14 +643,14 @@
     var variantSection = document.querySelector('variant-radios');
 
     variantSection.style.display =  'block';
-    let varChild = 1
+    let varChild = 0
     if (ciudades.includes(ciudad)) {
-      varChild = 1
+      varChild = 0
       console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
     } else {
-      varChild = 2
+      varChild = 1
       console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
