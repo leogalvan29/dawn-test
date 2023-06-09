@@ -652,6 +652,10 @@
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
     }
+
+    {% comment %} visibilidad de las variaciones {% endcomment %}
+    var variantSection = document.querySelector('variant-radios');
+    variantSection.style.display =  'block';
   }
 </script>
 {% schema %}
