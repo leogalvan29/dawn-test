@@ -629,10 +629,10 @@
   </script>
 </section>
 <script>
-  
-  {% comment %} const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Rio Colorado","Hermosillo","Ciudad Juarez","Culiacán","Mazatlan","Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","Leon","Saltillo","Monterrey","Apodaca","San Pedro Garza Garcia","General" "Escobedo","Guadalupe","San Nicolas de los Garza","Santa Catarina","Ciudad de Mexico","Puebla","Playa del Carmen"] {% endcomment %}
   async function getDisponibilidad() {
-    const ciudades = ["Culiacán", "México", "Guadalajara"]
+    {% comment %} const ciudades = ["Culiacán", "México", "Guadalajara"] {% endcomment %}
+      const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Rio Colorado","Hermosillo","Ciudad Juarez","Culiacán","Mazatlan","Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","Leon","Saltillo","Monterrey","Apodaca","San Pedro Garza Garcia","General" "Escobedo","Guadalupe","San Nicolas de los Garza","Santa Catarina","Ciudad de Mexico","Puebla","Playa del Carmen"]
+
     const cp = document.getElementById('inputCP').value;
     console.log(cp)
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
