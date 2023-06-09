@@ -647,18 +647,20 @@
     variantSection.style.display =  'block';
     let varChild = 2
     if (ciudades.includes(ciudad)) {
-      varChild = 1
+      
       console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
+      varChild = 1
     } else {
-      varChild = 2
+     
       console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
+      varChild = 2
     }
     var option = document.querySelector(`.product-variants select[name="id"] option:nth-child(${varChild})`);
-    //option.selected = true;
+    option.selected = true;
 
     {% comment %} visibilidad de las variaciones {% endcomment %}
 
