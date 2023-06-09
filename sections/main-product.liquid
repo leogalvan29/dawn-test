@@ -643,19 +643,19 @@
     var variantSection = document.querySelector('variant-radios');
 
     variantSection.style.display =  'block';
-    
+
     if (ciudades.includes(ciudad)) {
       console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
-      var option = document.querySelector('.product-variants select[name="id"] option:nth-child(1)');
+      var option = document.querySelector('.product-variants select[name="id"] option:nth-child(2)');
       secondVariantOption.selected = true;
 
     } else {
       console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
-      var option = document.querySelector('.product-variants select[name="id"] option:nth-child(2)');
+      var option = document.querySelector('.product-variants select[name="id"] option:nth-child(1)');
       secondVariantOption.selected = true;
     }
 
