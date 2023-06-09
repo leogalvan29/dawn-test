@@ -665,8 +665,9 @@
     }
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
     //console.log(radioCheck)
-    var option = document.querySelector(radioCheck);
-    option.checked  = true;
+    //var option = document.querySelector(radioCheck);
+    document.querySelector(radioCheck).click();
+    //option.checked  = true;
     var productToggleItems = document.querySelector('.product-toggle-items')
     productToggleItems.style.display = 'block'
     varChild=0
