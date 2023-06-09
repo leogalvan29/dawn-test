@@ -660,7 +660,7 @@
       varChild = 2
     }
     console.log(varChild)
-    var option = document.querySelector(`.product-variants select[name="id"] option:nth-child(${varChild})`);
+    var option = document.querySelector(`.product-variants fieldset select[name="id"] option:nth-child(${varChild})`);
     option.selected = true;
 
     {% comment %} visibilidad de las variaciones {% endcomment %}
