@@ -648,23 +648,22 @@
     var variantSection = document.querySelector('variant-radios');
 
     variantSection.style.display =  'block';
-    let varChild = 2
+    let varChild = 0
     if (ciudades.includes(ciudad)) {
       
       console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
-      varChild = 1
+      varChild = 0
     } else {
      
       console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
-      varChild = 2
+      varChild = 1
     }
-    console.log(varChild)
-    var option = document.querySelector(`#template--19257811796253__main-1-0:nth-child(${varChild})`);
-    //option.checked  = true;
+    var option = document.querySelector(`template--19257811796253__main-1-${varChild}`);
+    option.checked  = true;
   }
 </script>
 {% schema %}
