@@ -541,7 +541,7 @@
     </script>
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
-{% comment %} 
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       function isIE() {
@@ -567,7 +567,7 @@
         hiddenInput.value = event.currentTarget.value;
       });
     });
-  </script> {% endcomment %}
+  </script>
 
   {%- liquid
     if product.selected_or_first_available_variant.featured_media
