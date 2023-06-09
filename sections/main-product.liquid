@@ -641,6 +641,7 @@
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
+    console.log(ciudad)
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
@@ -663,7 +664,7 @@
     }
     console.log(varChild)
     var option = document.querySelector(`#template--19257811796253__main-1-0:nth-child(${varChild})`);
-    option.checked  = true;
+    //option.checked  = true;
   }
 </script>
 {% schema %}
