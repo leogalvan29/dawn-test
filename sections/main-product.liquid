@@ -357,7 +357,7 @@
     <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP">
     <button
       class="shopify-payment-button__button shopify-payment-button__button--unbranded BUz42FHpSPncCPJ4Pr_f jjzYeefyWpPZLH9pIgyw RWJ0IfBjxIhflh4AIrUw"
-      onclick=  {getDisponibilidad()}>
+      onclick=  getDisponibilidad()>
       Disponibilidad instalacion
     </button>
   </div>
@@ -658,7 +658,7 @@
       no_disponible.style.display = 'block'
     }
     var option = document.querySelector(`.product-variants select[name="id"] option:nth-child(${varChild})`);
-    option.selected = true;
+    //option.selected = true;
 
     {% comment %} visibilidad de las variaciones {% endcomment %}
 
