@@ -212,21 +212,6 @@
         "padding_bottom": 36
       }
     },
-    "93ca59d3-d881-410b-a8a1-5d6c0e127575": {
-      "type": "video",
-      "settings": {
-        "heading": "Video",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https:\/\/www.youtube.com\/watch?v=fI40H4pzI6M",
-        "cover_image": "shopify:\/\/shop_images\/cartucho-02.jpg",
-        "description": "",
-        "full_width": true,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "f9ae6734-df14-4ebd-9c99-112959782d47": {
       "type": "botones",
       "settings": {
@@ -242,7 +227,6 @@
     "collage",
     "video",
     "multicolumn",
-    "93ca59d3-d881-410b-a8a1-5d6c0e127575",
     "f9ae6734-df14-4ebd-9c99-112959782d47"
   ]
 }
