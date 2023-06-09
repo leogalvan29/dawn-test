@@ -215,10 +215,12 @@
     "f9ae6734-df14-4ebd-9c99-112959782d47": {
       "type": "botones",
       "settings": {
-        "titulo_botones": "Conversemos",
-        "texto_botones": "Nuestro Equipo  de asesores está listo para brindarte toda la informacion que necesites sobre nuestras cerraduras",
-        "button_1": "",
-        "link_boton1": ""
+        "titulo_botones": "Platiquemos",
+        "texto_botones": "Nuesto Equipo  de asesores está listo para brindarte toda la informacion que necesites sobre nuestras cerraduras",
+        "link_btn1": "",
+        "texto_btn1": "",
+        "texto_btn2": "",
+        "link_btn2": ""
       }
     }
   },
