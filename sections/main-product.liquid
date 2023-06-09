@@ -643,20 +643,23 @@
     var variantSection = document.querySelector('variant-radios');
 
     variantSection.style.display =  'block';
-    let varChild = 0
+    let varChild = 1
     if (ciudades.includes(ciudad)) {
-      varChild = 0
+      varChild = 1
       console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
     } else {
-      varChild = 1
+      varChild = 2
       console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
     }
     var option = document.querySelector(`.product-variants select[name="id"] option:nth-child(${varChild})`);
     option.selected = true;
+
+    {% comment %} visibilidad de las variaciones {% endcomment %}
+
   }
 </script>
 {% schema %}
