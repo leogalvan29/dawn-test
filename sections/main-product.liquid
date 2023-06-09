@@ -650,17 +650,16 @@
     variantSection.style.display =  'block';
     let varChild = 0
     if (ciudades.includes(ciudad)) {
-      
+      varChild = 0
       console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
-      varChild = 0
+
     } else {
-     
+      varChild = 1
       console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
-      varChild = 1
     }
     var option = document.querySelector(`template--19257811796253__main-1-${varChild}`);
     option.checked  = true;
