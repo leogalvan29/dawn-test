@@ -215,6 +215,7 @@
     "f9ae6734-df14-4ebd-9c99-112959782d47": {
       "type": "botones",
       "settings": {
+        "titulo_botones": "Conversemos",
         "button_1": "",
         "link_boton1": ""
       }
