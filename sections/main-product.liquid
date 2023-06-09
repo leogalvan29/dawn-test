@@ -145,7 +145,7 @@
                       {%- endif -%}
                     {%- endif -%}
                   {%- else -%}
-                    {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
+                    {% comment %} {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
                       <svg width="15" height="15" aria-hidden="true">
                         <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)"/>
                         <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
@@ -157,7 +157,7 @@
                         <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(200,200,200)"/>
                       </svg>
                       {{- 'products.product.inventory_out_of_stock' | t -}}
-                    {%- endif -%}
+                    {%- endif -%} {% endcomment %}
                   {%- endif -%}
                 {%- endif -%}
               </p>
