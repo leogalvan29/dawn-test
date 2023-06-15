@@ -642,13 +642,14 @@
 <script>
   var disabledButtons = document.getElementById("buy-buttons");
   var disponible = document.querySelector('.disponible');
-  disponible.style.display = 'block'
+  
   if(sessionStorage.getItem("instalacion")){
     
     var disponibilidad = document.querySelector('.container-disponibilidad');
     var variantSection = document.querySelector('variant-radios');
     
     disponibilidad.style.display = 'none'
+    disponible.style.display = 'block'
     variantSection.style.display =  'block';
    
   }else{
