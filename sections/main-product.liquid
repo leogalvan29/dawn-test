@@ -312,9 +312,7 @@
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 
             {%- when 'buy_buttons' -%}
-              <div style="cursor: default;">
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
-            </div>
           </div>
  {% comment %} Disponibilidad codigo postal {% endcomment %}
  <p style="color: rgb(255, 115, 0); text-align: start;">
@@ -349,6 +347,10 @@
   background-color: rgb(255, 39, 39);
   color:white;
   padding: 5px;
+  }
+  .product-form__buttons{
+    cursor: default;
+    pointer-events: none;
   }
 </style>
 <style>
