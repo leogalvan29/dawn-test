@@ -312,7 +312,7 @@
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 
             {%- when 'buy_buttons' -%}
-              <div class="disable-button" id="buy-buttons">
+              <div id="buy-buttons">
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
               </div>
           </div>
@@ -640,17 +640,19 @@
   </script>
 </section>
 <script>
+  var disabledButtons = document.getElementById("buy-buttons");
+
   if(sessionStorage.getItem("instalacion")){
     
     var disponibilidad = document.querySelector('.container-disponibilidad');
     var variantSection = document.querySelector('variant-radios');
-    var disabledButtons = document.getElementById("buy-buttons");
     var disponible = document.querySelector('.disponible');
 
     disponibilidad.style.display = 'none'
     variantSection.style.display =  'block';
-    disabledButtons.classList.remove("disable-button")
     disponible.style.display = 'block'
+  }else{
+    disabledButtons.classList.add("disable-button")
   }
 </script>
 <script>
