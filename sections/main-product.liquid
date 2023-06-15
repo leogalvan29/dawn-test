@@ -676,9 +676,12 @@
     }
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
     disabledButtons.remove("disabled-button")
+    //console.log(radioCheck)
 
     document.querySelector(radioCheck).click();
-    
+
+    var productToggleItems = document.querySelector('.product-toggle-items')
+    productToggleItems.style.display = 'block'
     varChild=0
   }
 </script>
