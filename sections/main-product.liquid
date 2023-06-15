@@ -355,7 +355,6 @@
     pointer-events: none; 
     background-color: #e6e6e6;
     color: #717171;
-    border: 20px solid black;
   }
 </style>
 <style>
@@ -648,16 +647,18 @@
     "Escobedo","Guadalupe","San Nicolas de los Garza","Santa Catarina","Ciudad de Mexico","Puebla","Playa del Carmen"]
 
     const cp = document.getElementById('inputCP').value;
-    console.log(cp)
+    {% comment %} console.log(cp) {% endcomment %}
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
-    console.log(ciudad)
+    {% comment %} console.log(ciudad) {% endcomment %}
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
     var variantSection = document.querySelector('variant-radios');
+    var disabledButtons = document.getElementById("buy-buttons");
+
 
     variantSection.style.display =  'block';
     let varChild = 0
@@ -674,12 +675,10 @@
       no_disponible.style.display = 'block'
     }
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
-    //console.log(radioCheck)
+    disabledButtons.remove("disabled-button")
 
     document.querySelector(radioCheck).click();
-
-    var productToggleItems = document.querySelector('.product-toggle-items')
-    productToggleItems.style.display = 'block'
+    
     varChild=0
   }
 </script>
