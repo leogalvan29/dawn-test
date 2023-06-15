@@ -642,8 +642,10 @@
 <script>
   if(sessionStorage.getItem("instalacion")){
     var disponibilidad = document.querySelector('.container-disponibilidad');
+    var variantSection = document.querySelector('variant-radios');
     var disabledButtons = document.getElementById("buy-buttons");
     disponibilidad.style.display = 'none'
+    variantSection.style.display =  'block';
     disabledButtons.classList.remove("disable-button")
   }
 </script>
