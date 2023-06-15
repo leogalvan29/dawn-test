@@ -670,15 +670,19 @@
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
-    console.log(ciudad)
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
-    var variantSection = document.querySelector('variant-radios');
     var disabledButtons = document.getElementById("buy-buttons");
 
+    try{
+      var variantSection = document.querySelector('variant-radios');
+      variantSection.style.display =  'block';
+    }
+    catch(e) {
+      console.error(e,"No variant buttons")
+    }
 
-    variantSection.style.display =  'block';
     let varChild = 0
     if (ciudades.includes(ciudad)) {
       varChild = 0
@@ -699,7 +703,7 @@
       document.querySelector(radioCheck).click();
     }
     catch(e) {
-      console.error(e,"No radio buttons")
+      console.error(e,"No variant buttons")
     }
     varChild=0
   }
