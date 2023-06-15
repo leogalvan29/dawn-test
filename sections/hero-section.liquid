@@ -1,6 +1,6 @@
 
 <div class="contenedor-banner">
-     
+     <img src="{{ section.settings.banner_1  | image_url }}" alt="">
      <div class="contenido-banner-desktop">
          <h3><span>{{ section.settings.texto_span_banner }}</span>{{section.settings.texto_banner }}</h3>
          <a href="#">{{ section.settings.texto_boton_banner }}</a>
@@ -13,12 +13,12 @@
 
 <style>
     .contenedor-banner{
-        background-image: url("{{ section.settings.banner_1 | image_url }}");
+        position: relative;
     }
 
     .contenido-banner-desktop{
         position: absolute; 
-
+        
     }
 </style>
 
