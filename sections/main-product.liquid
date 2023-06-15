@@ -307,12 +307,12 @@
                 block: block,
                 share_link: share_url
               %}
-
-            {%- when 'variant_picker' -%}
-              {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-            {%- when 'buy_buttons' -%}
-              <div classname="but-buttons" style="pointer-events: none; cursors: default; display=none;">
-              {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+              <div classname="buy-buttons" style="pointer-events: none; cursors: default; display=none;">
+              {%- when 'variant_picker' -%}
+                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+              {%- when 'buy_buttons' -%}
+              
+                {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
               </div>
           </div>
  {% comment %} Disponibilidad codigo postal {% endcomment %}
