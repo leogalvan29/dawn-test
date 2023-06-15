@@ -642,7 +642,9 @@
 <script>
   if(sessionStorage.getItem("instalacion")){
     var disponibilidad = document.querySelector('.container-disponibilidad');
+    var disabledButtons = document.getElementById("buy-buttons");
     disponibilidad.style.display = 'none'
+    disabledButtons.classList.remove("disable-button")
   }
 </script>
 <script>
