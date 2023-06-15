@@ -1,5 +1,15 @@
 {
   "sections": {
+    "681a1187-1cad-4e6d-9897-3f432367ce5b": {
+      "type": "hero-section",
+      "settings": {
+        "banner_1": "shopify:\/\/shop_images\/Banner_Compu_S_T-Comp.png",
+        "texto_banner": "",
+        "texto_span_banner": "Controla la seguridad",
+        "texto_boton_banner": "",
+        "link_btn_banner": ""
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -223,25 +233,16 @@
         "texto_btn2": "",
         "link_btn2": ""
       }
-    },
-    "681a1187-1cad-4e6d-9897-3f432367ce5b": {
-      "type": "hero-section",
-      "settings": {
-        "banner_1": "shopify:\/\/shop_images\/Banner_Compu_S_T-Comp.png",
-        "texto_banner": "",
-        "texto_boton_banner": "",
-        "link_btn_banner": ""
-      }
     }
   },
   "order": [
+    "681a1187-1cad-4e6d-9897-3f432367ce5b",
     "image_banner",
     "rich_text",
     "featured_collection",
     "collage",
     "video",
     "multicolumn",
-    "f9ae6734-df14-4ebd-9c99-112959782d47",
-    "681a1187-1cad-4e6d-9897-3f432367ce5b"
+    "f9ae6734-df14-4ebd-9c99-112959782d47"
   ]
 }
