@@ -637,24 +637,24 @@
     }
   </script>
 </section>
+
 <script>
-  var disabledButtons = document.getElementById("buy-buttons");
+  var containder_disponibilidad = document.querySelector('.container-disponibilidad');
   var disponible = document.querySelector('.disponible');
-  disponible.style.display = 'block'
+  var no_disponible = document.querySelector('.no-disponible');
+  var variantSection = document.querySelector('variant-radios');
+  var disabledButtons = document.getElementById("buy-buttons");
+  
   if(sessionStorage.getItem("instalacion")){
-    
-    var disponibilidad = document.querySelector('.container-disponibilidad');
-    var variantSection = document.querySelector('variant-radios');
-    
-    disponibilidad.style.display = 'none'
+    containder_disponibilidad.style.display = 'none'
     variantSection.style.display =  'block';
    
   }else{
     disabledButtons.classList.add("disable-button")
+    disponible.style.display = 'none'
+    no_disponible.style.display = 'none'
   }
   
-</script>
-<script>
   async function getDisponibilidad() {
    
     const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Rio Colorado","Hermosillo","Ciudad Juarez","Culiacán","Mazatlan",
@@ -668,11 +668,6 @@
     const isCovered = false;
     const ciudad = data[0].response.municipio
     {% comment %} console.log(ciudad) {% endcomment %}
-    
-    var disponible = document.querySelector('.disponible');
-    var no_disponible = document.querySelector('.no-disponible');
-    var variantSection = document.querySelector('variant-radios');
-    var disabledButtons = document.getElementById("buy-buttons");
 
 
     variantSection.style.display =  'block';
