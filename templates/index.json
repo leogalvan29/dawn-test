@@ -10,34 +10,16 @@
         "link_btn_banner": ""
       }
     },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
+    "f9ae6734-df14-4ebd-9c99-112959782d47": {
+      "type": "botones",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "titulo_botones": "Conversemos",
+        "texto_botones": "Nuesto Equipo  de asesores está listo para brindarte toda la informacion que necesites sobre nuestras cerraduras",
+        "icono-whatsapp": "shopify:\/\/shop_images\/whatsapp.svg",
+        "link_btn1": "https:\/\/api.whatsapp.com\/send?phone=526674202602&text=Hola%20necesito%20informaci%C3%B3n%20sobre%20sus%20cerraduras%20",
+        "texto_btn1": "",
+        "texto_btn2": "",
+        "link_btn2": ""
       }
     },
     "featured_collection": {
@@ -67,134 +49,11 @@
         "padding_top": 28,
         "padding_bottom": 36
       }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": true,
-        "video": "shopify:\/\/files\/videos\/VIDEO PAGINA MODIFICADO.mp4",
-        "video_url": "",
-        "description": "",
-        "full_width": true,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "f9ae6734-df14-4ebd-9c99-112959782d47": {
-      "type": "botones",
-      "settings": {
-        "titulo_botones": "Conversemos",
-        "texto_botones": "Nuesto Equipo  de asesores está listo para brindarte toda la informacion que necesites sobre nuestras cerraduras",
-        "icono-whatsapp": "shopify:\/\/shop_images\/whatsapp.svg",
-        "link_btn1": "https:\/\/api.whatsapp.com\/send?phone=526674202602&text=Hola%20necesito%20informaci%C3%B3n%20sobre%20sus%20cerraduras%20",
-        "texto_btn1": "",
-        "texto_btn2": "",
-        "link_btn2": ""
-      }
     }
   },
   "order": [
     "681a1187-1cad-4e6d-9897-3f432367ce5b",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn",
-    "f9ae6734-df14-4ebd-9c99-112959782d47"
+    "f9ae6734-df14-4ebd-9c99-112959782d47",
+    "featured_collection"
   ]
 }
