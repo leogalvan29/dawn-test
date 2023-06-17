@@ -60,7 +60,7 @@
     "7bf929ff-7c6c-4814-a12d-c725efad4ce1": {
       "type": "comodidad-bloque",
       "settings": {
-        "titulo_comodidad": "Descubre la comodidad y seguridad",
+        "titulo_comodidad": "Descubre la <br> comodidad y seguridad",
         "texto_comodidad": "que te brinda una cerradura inteligente.",
         "button_comodidad": "VER BENEFICIOS",
         "link_boton": "https:\/\/web.whatsapp.com\/"
