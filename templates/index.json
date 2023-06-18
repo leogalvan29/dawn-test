@@ -38,6 +38,24 @@
         "padding_bottom": 36
       }
     },
+    "7bf929ff-7c6c-4814-a12d-c725efad4ce1": {
+      "type": "comodidad-bloque",
+      "settings": {
+        "titulo_comodidad": "Descubre la <br> comodidad y seguridad",
+        "texto_comodidad": "que te brinda una cerradura inteligente.",
+        "button_comodidad": "VER BENEFICIOS",
+        "link_boton": "https:\/\/web.whatsapp.com\/",
+        "texto_desktop_comodidad": "Descubre <br> la comodidad <br> y seguridad.",
+        "texto_desc_com": "que te brinda una <br> cerradura inteligente."
+      }
+    },
+    "225a043b-70f2-41ed-8beb-c48293bdff84": {
+      "type": "instalacion",
+      "settings": {
+        "texto_instalacion": "",
+        "texto_resaltado_instalacion": ""
+      }
+    },
     "f9ae6734-df14-4ebd-9c99-112959782d47": {
       "type": "botones",
       "settings": {
@@ -49,31 +67,13 @@
         "texto_btn2": "",
         "link_btn2": ""
       }
-    },
-    "225a043b-70f2-41ed-8beb-c48293bdff84": {
-      "type": "instalacion",
-      "settings": {
-        "texto_instalacion": "",
-        "texto_resaltado_instalacion": ""
-      }
-    },
-    "7bf929ff-7c6c-4814-a12d-c725efad4ce1": {
-      "type": "comodidad-bloque",
-      "settings": {
-        "titulo_comodidad": "Descubre la <br> comodidad y seguridad",
-        "texto_comodidad": "que te brinda una cerradura inteligente.",
-        "button_comodidad": "VER BENEFICIOS",
-        "link_boton": "https:\/\/web.whatsapp.com\/",
-        "texto_desktop_comodidad": "Descubre <br> la comodidad <br> y seguridad.",
-        "texto_desc_com": "que te brinda una <br> cerradura inteligente."
-      }
     }
   },
   "order": [
     "681a1187-1cad-4e6d-9897-3f432367ce5b",
     "featured_collection",
-    "f9ae6734-df14-4ebd-9c99-112959782d47",
+    "7bf929ff-7c6c-4814-a12d-c725efad4ce1",
     "225a043b-70f2-41ed-8beb-c48293bdff84",
-    "7bf929ff-7c6c-4814-a12d-c725efad4ce1"
+    "f9ae6734-df14-4ebd-9c99-112959782d47"
   ]
 }
