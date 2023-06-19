@@ -67,15 +67,6 @@
         "texto_btn2": "",
         "link_btn2": ""
       }
-    },
-    "e444d768-8650-4404-b06c-e2966b72d166": {
-      "type": "hero-section",
-      "settings": {
-        "texto_banner": "kkk",
-        "texto_span_banner": "",
-        "texto_boton_banner": "",
-        "link_btn_banner": ""
-      }
     }
   },
   "order": [
@@ -83,7 +74,6 @@
     "featured_collection",
     "7bf929ff-7c6c-4814-a12d-c725efad4ce1",
     "225a043b-70f2-41ed-8beb-c48293bdff84",
-    "f9ae6734-df14-4ebd-9c99-112959782d47",
-    "e444d768-8650-4404-b06c-e2966b72d166"
+    "f9ae6734-df14-4ebd-9c99-112959782d47"
   ]
 }
