@@ -643,10 +643,10 @@
   var disabledButtons = document.getElementById("buy-buttons");
   var disponible = document.querySelector('.disponible');
 
-  const sessionStorage = sessionStorage.getItem("instalacion")
-  console.log(sessionStorage)
+  var session = sessionStorage.getItem("instalacion")
+  console.log(session)
   
-  if(sessionStorage){
+  if(sessionStorage.getItem("instalacion")){
     
     var disponibilidad = document.querySelector('.container-disponibilidad');
     var variantSection = document.querySelector('variant-radios');
