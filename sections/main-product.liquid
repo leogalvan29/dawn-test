@@ -642,8 +642,11 @@
 <script>
   var disabledButtons = document.getElementById("buy-buttons");
   var disponible = document.querySelector('.disponible');
+
+  const sessionStorage = sessionStorage.getItem("instalacion")
+  console.log(sessionStorage)
   
-  if(sessionStorage.getItem("instalacion")){
+  if(sessionStorage){
     
     var disponibilidad = document.querySelector('.container-disponibilidad');
     var variantSection = document.querySelector('variant-radios');
@@ -694,6 +697,7 @@
       varChild = 1
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
+      sessionStorage.setItem("instalacion", false);
     }
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
     try{
