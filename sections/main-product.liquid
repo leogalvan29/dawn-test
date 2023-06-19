@@ -654,13 +654,12 @@
     disponibilidad.style.display = 'none'
     console.log(session)
 
-    if(!session){
+    if(session === false){
       disponible.style.display = 'none'
       NoDisponible.style.display = 'block';
     }else{
       NoDisponible.style.display = 'none';
       disponible.style.display = 'block'
-  
     }
       
     variantSection.style.display =  'block';
