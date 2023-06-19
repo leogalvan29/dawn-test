@@ -652,7 +652,6 @@
     var variantSection = document.querySelector('variant-radios');
 
     disponibilidad.style.display = 'none'
-    console.log(session)
 
     if(session==="false"){
       disponible.style.display = 'none'      
@@ -661,9 +660,7 @@
       NoDisponible.style.display = 'none';
       disponible.style.display = 'block'
     }
-      
-    variantSection.style.display =  'block';
-   
+    variantSection.style.display =  'block';   
   }else{
     disabledButtons.classList.add("disable-button")
   }
