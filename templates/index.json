@@ -60,7 +60,7 @@
       "type": "botones",
       "settings": {
         "titulo_botones": "Conversemos",
-        "texto_botones": "Nuesto Equipo  de asesores está listo para brindarte toda la informacion que necesites sobre nuestras cerraduras",
+        "texto_botones": "Nuesto equipo  de asesores está listo para brindarte toda la informacion que necesites sobre nuestras cerraduras",
         "icono-whatsapp": "shopify:\/\/shop_images\/whatsapp.svg",
         "link_btn1": "https:\/\/api.whatsapp.com\/send?phone=526674202602&text=Hola%20necesito%20informaci%C3%B3n%20sobre%20sus%20cerraduras%20",
         "texto_btn1": "",
