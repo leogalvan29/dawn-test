@@ -145,7 +145,12 @@
     "26d35dbc-e55f-4d36-88e5-2bc843a580d6": {
       "type": "iconos-pr",
       "settings": {
-        "titulo-iconos": "Caracteristicas"
+        "titulo-iconos": "Caracteristicas",
+        "icono_pr_1": "shopify:\/\/shop_images\/App-C.png",
+        "icono_pr_2": "shopify:\/\/shop_images\/Codigo-C.png",
+        "icono_pr_3": "shopify:\/\/shop_images\/Tarjeta-C.png",
+        "icono_pr_4": "shopify:\/\/shop_images\/App-C.png",
+        "icono_pr_5": "shopify:\/\/shop_images\/Huella_-C.png"
       }
     },
     "a98ca961-274a-4811-97ba-b4082d735742": {
