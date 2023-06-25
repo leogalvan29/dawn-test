@@ -17,7 +17,10 @@
       {{ product.metafields.custom.aplicacion | metafield_tag }}
       </p>
     </div>
-    <h3></h3>
+    <h3>Tabla</h3>
+    <div>
+      <img src="{{ product.metafields.custom.ficha_1 | image_url }}" alt="ficha" class="tabla">
+    </div>
  
   </div>
   <a href="{{ product.metafields.custom.ficha_tecnica.value.url }}" target="new" class="ficha-tecnica">Descargar Ficha</a>
