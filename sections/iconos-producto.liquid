@@ -6,7 +6,7 @@
     <div>
       
         <p>{{ product.metafields.custom.descripcion | metafield_tag }}  </p>
-        <img src="{{ product.metafields.custom.ficha_1 | img_tag }}" alt="">
+        <img src="{{ product.metafields.custom.ficha_1.value.url | img_tag }}" alt="">
       
       
     </div> 
