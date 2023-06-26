@@ -3332,7 +3332,7 @@ details-disclosure > details {
 .icon-ws-menu{
   width: 16px;
   height: 16px;
-  position: relative;
+  position: absolute;
   bottom: 33px;
   right: 6px;
 }
