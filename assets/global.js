@@ -1169,4 +1169,4 @@ class ProductRecommendations extends HTMLElement {
 customElements.define('product-recommendations', ProductRecommendations);
 
 
-const menuDesktop = document.querySelector('')
+const menuDesktop = document.querySelector('.header__inline-menu')
