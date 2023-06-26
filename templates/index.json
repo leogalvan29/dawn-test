@@ -67,6 +67,12 @@
         "texto_btn2": "",
         "link_btn2": ""
       }
+    },
+    "7e719789-1f85-4026-9d6e-97b21c8193d5": {
+      "type": "resenas",
+      "settings": {
+        "resena_1": "shopify:\/\/shop_images\/balanzasohausmexico.jpg"
+      }
     }
   },
   "order": [
@@ -74,6 +80,7 @@
     "featured_collection",
     "7bf929ff-7c6c-4814-a12d-c725efad4ce1",
     "225a043b-70f2-41ed-8beb-c48293bdff84",
-    "f9ae6734-df14-4ebd-9c99-112959782d47"
+    "f9ae6734-df14-4ebd-9c99-112959782d47",
+    "7e719789-1f85-4026-9d6e-97b21c8193d5"
   ]
 }
