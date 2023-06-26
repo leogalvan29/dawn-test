@@ -1173,4 +1173,4 @@ const menuDesktop = document.querySelector('.header__inline-menu').children[0].c
 const whatsappMenu = document.createElement('img')
 whatsappMenu.setAttribute('src' , 'https://cdn.shopify.com/s/files/1/0766/8829/4173/files/whatsapp_1.svg?v=1687745201') 
 
-whatsappMenu
+whatsappMenu.appendChild(whatsappMenu)
