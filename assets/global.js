@@ -1169,5 +1169,6 @@ class ProductRecommendations extends HTMLElement {
 customElements.define('product-recommendations', ProductRecommendations);
 
 
-const menuDesktop = document.querySelector('.header__inline-menu')
+const menuDesktop = document.querySelector('.header__inline-menu') 
+const whatsappMenu = document.createElement()
 console.log(menuDesktop.children[0].children[5])
