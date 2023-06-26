@@ -3328,5 +3328,8 @@ details-disclosure > details {
 }
 
 .icon-ws-menu{
-  width: ;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  bottom: 2;
 }
