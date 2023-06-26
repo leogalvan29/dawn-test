@@ -1170,5 +1170,6 @@ customElements.define('product-recommendations', ProductRecommendations);
 
 
 const menuDesktop = document.querySelector('.header__inline-menu') 
-const whatsappMenu = document.createElement()
+const whatsappMenu = document.createElement('img')
+whatsappMenu.set
 console.log(menuDesktop.children[0].children[5])
