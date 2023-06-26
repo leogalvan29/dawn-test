@@ -3321,3 +3321,7 @@ details-disclosure > details {
 .header--middle-left{
   grid-template-columns: auto;
 }
+
+.header__menu-item span {
+  font-weight: 700;
+}
