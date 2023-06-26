@@ -3337,6 +3337,6 @@ details-disclosure > details {
   width: 16px;
   height: 16px;
   position: absolute;
-  bottom: 33px;
-  right: 6px;
+  bottom: 15px;
+  left: 6px;
 }
