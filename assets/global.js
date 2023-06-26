@@ -1169,3 +1169,4 @@ class ProductRecommendations extends HTMLElement {
 customElements.define('product-recommendations', ProductRecommendations);
 
 
+const menuDesktop = document.querySelector('')
