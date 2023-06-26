@@ -3316,3 +3316,8 @@ details-disclosure > details {
     --sparkle: url('./sparkle.gif');
   }
 }
+
+
+.header--middle-left{
+  grid-template-columns: auto;
+}
