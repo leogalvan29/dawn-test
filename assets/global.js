@@ -1170,4 +1170,4 @@ customElements.define('product-recommendations', ProductRecommendations);
 
 
 const menuDesktop = document.querySelector('.header__inline-menu')
-console.log(menuDesktop.children[0].children)
+console.log(menuDesktop.children[0].children[5])
