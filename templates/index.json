@@ -53,7 +53,10 @@
       "type": "resenas",
       "settings": {
         "titulo_resena": "Reseñas de nuestros clientes",
-        "resena_1": "shopify:\/\/shop_images\/reseneapng.png"
+        "resena_1": "shopify:\/\/shop_images\/TLX02_PLUS-c.png",
+        "resena_2": "shopify:\/\/shop_images\/TLX02-c.png",
+        "resena_3": "shopify:\/\/shop_images\/TLX02_-_PLUS-c.png",
+        "resena_4": "shopify:\/\/shop_images\/TLX02_PLATA-c.png"
       }
     },
     "225a043b-70f2-41ed-8beb-c48293bdff84": {
