@@ -69,6 +69,10 @@
     "27ff689c-0945-474c-9cae-dfe475a44da3": {
       "type": "galeria-slider",
       "settings": {
+        "imagen_slider_1": "shopify:\/\/shop_images\/1.png",
+        "imagen_slider_2": "shopify:\/\/shop_images\/2.png",
+        "imagen_slider_3": "shopify:\/\/shop_images\/3.png",
+        "imagen_slider_4": "shopify:\/\/shop_images\/4.png"
       }
     },
     "f9ae6734-df14-4ebd-9c99-112959782d47": {
