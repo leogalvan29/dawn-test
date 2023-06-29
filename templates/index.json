@@ -66,6 +66,11 @@
         "texto_resaltado_instalacion": ""
       }
     },
+    "27ff689c-0945-474c-9cae-dfe475a44da3": {
+      "type": "galeria-slider",
+      "settings": {
+      }
+    },
     "f9ae6734-df14-4ebd-9c99-112959782d47": {
       "type": "botones",
       "settings": {
@@ -85,6 +90,7 @@
     "7bf929ff-7c6c-4814-a12d-c725efad4ce1",
     "7e719789-1f85-4026-9d6e-97b21c8193d5",
     "225a043b-70f2-41ed-8beb-c48293bdff84",
+    "27ff689c-0945-474c-9cae-dfe475a44da3",
     "f9ae6734-df14-4ebd-9c99-112959782d47"
   ]
 }
