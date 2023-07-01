@@ -5,9 +5,10 @@
     "footer": {
       "type": "footer",
       "settings": {
-        "titulo_1_footer": "",
-        "parrafo_1_footer": "",
-        "link_whatsapp": "https:\/\/www.whatsapp.com\/?l=es"
+        "titulo_1_footer": "ACERCA DE TOCK LOCK",
+        "parrafo_1_footer": "Nuestras cerraduras inteligentes brindan una solución en seguridad, conectividad y control de acceso. Su facilidad de uso y distintos métodos de apertura sin llave te brindarán una experiencia única. Contamos con la tecnología más avanzada para tu hogar, Airbnb o negocio que te ofrecerá un control total desde tu celular.",
+        "titulo_2_footer": "¿DUDAS?",
+        "parrafo_2_footer": ""
       }
     }
   },
