@@ -32,7 +32,8 @@
         "logo_youtube": "shopify:\/\/shop_images\/youtube.svg",
         "link_youtube": "https:\/\/www.youtube.com\/",
         "logo_mail": "shopify:\/\/shop_images\/email_1.svg",
-        "link_tiktok": ""
+        "logo_tiktok": "shopify:\/\/shop_images\/tiktok.svg",
+        "link_tiktok": "https:\/\/www.tiktok.com\/en\/"
       }
     }
   },
