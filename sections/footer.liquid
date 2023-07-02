@@ -317,7 +317,10 @@
         <img src="{{ section.settings.imagen_envios | image_url }}" alt="">
         <p>{{ section.settings.texto_envios }}</p>
         <style>
-          .columna-envios-desktop 
+          .columna-envios-desktop {
+            display: flex;
+            
+          }
           .columna-envios-desktop img{
              width: 22px;
              height: 22px;
