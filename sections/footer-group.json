@@ -28,8 +28,11 @@
         "enlace_faq": "Preguntas frecuentes",
         "link_faq": "https:\/\/www.tocklock.com.mx\/",
         "logo_insta": "shopify:\/\/shop_images\/instagram_1.svg",
+        "link_insta": "https:\/\/www.instagram.com\/",
         "logo_youtube": "shopify:\/\/shop_images\/youtube.svg",
-        "logo_mail": "shopify:\/\/shop_images\/email_1.svg"
+        "link_youtube": "https:\/\/www.youtube.com\/",
+        "logo_mail": "shopify:\/\/shop_images\/email_1.svg",
+        "link_tiktok": ""
       }
     }
   },
