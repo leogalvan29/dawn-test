@@ -15,7 +15,18 @@
         "titulo_direccion": "DIRECCIÓN",
         "texto_direccion": "Avenida de los Eucaliptos. Colonia\nLa Campiña #890, Culiacán,\nSinaloa. México.",
         "texto_envios": "Envíos gratis a todo México",
-        "imagen_envios": "shopify:\/\/shop_images\/fast-delivery.svg"
+        "imagen_envios": "shopify:\/\/shop_images\/fast-delivery.svg",
+        "texto_explora": "EXPLORA",
+        "enlace_beneficios": "Beneficios",
+        "link_beneficios": "",
+        "enlace_catalogo": "Catálogo",
+        "link_catalogo": "",
+        "enlace_encuentra": "Encuentra tu cerradura ideal",
+        "link_encuentra": "",
+        "enlace_soporte": "Soporte técnico",
+        "link_soporte": "",
+        "enlace_faq": "Preguntas frecuentes",
+        "link_faq": ""
       }
     }
   },
