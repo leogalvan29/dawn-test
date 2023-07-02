@@ -11,7 +11,9 @@
         "parrafo_2_footer": "Nuestro equipo técnico está aquí para brindarte atención\npersonalizada y garantizar que tengas la mejor experiencia\ncon nuestras cerraduras.",
         "titulo_conversemos": "",
         "icono_whatsapp_conversemos": "shopify:\/\/shop_images\/whatsapp_2.svg",
-        "icono_mail_conversemos": "shopify:\/\/shop_images\/email.svg"
+        "icono_mail_conversemos": "shopify:\/\/shop_images\/email.svg",
+        "titulo_direccion": "DIRECCIÓN",
+        "texto_direccion": "Avenida de los Eucaliptos. Colonia\nLa Campiña #890, Culiacán,\nSinaloa. México."
       }
     }
   },
