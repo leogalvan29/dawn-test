@@ -357,7 +357,7 @@
 <style>
   /* CSS to initially hide the variants */
   variant-radios {
-    {% comment %} display: none; {% endcomment %}
+    display: block;
   }
 </style>
 <div class="product-form__buttons">
@@ -670,13 +670,12 @@
     "Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","Leon","Saltillo","Monterrey","Apodaca","San Pedro Garza Garcia","General",
     "Escobedo","Guadalupe","San Nicolas de los Garza","Santa Catarina","Ciudad de Mexico","Puebla","Playa del Carmen"]
     const cp = document.getElementById('inputCP').value;
-    {% comment %} console.log(cp) {% endcomment %}
-    console.log(cp)
+
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
-    console.log(ciudad)
+
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
@@ -686,7 +685,6 @@
       variantSection.style.display =  'block';
     }
     catch(e) {
-      console.error(e,"No variant buttons")
     }
     var variantSection = document.querySelector('variant-radios');
     variantSection.style.display =  'block';
