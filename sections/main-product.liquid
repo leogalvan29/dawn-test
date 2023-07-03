@@ -88,7 +88,7 @@
                   </h2>
                 </a>
               </div>
-            <div>
+            <div class='product-toggle-items' style="display:none;">
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
@@ -307,16 +307,16 @@
                 block: block,
                 share_link: share_url
               %}
-             
+
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-
             {%- when 'buy_buttons' -%}
-              <div id="buy-buttons">
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
-              </div>
           </div>
  {% comment %} Disponibilidad codigo postal {% endcomment %}
+ <p style="color: rgb(255, 115, 0); text-align: start;">
+  Antes de agregar articulos con instalacion, ingrese su codigo postal en el siguiente cuadro para revisar la disponibilidad en su area
+</p>
 <style>
   .container-disponibilidad {
     display: flex;
@@ -347,12 +347,6 @@
   color:white;
   padding: 5px;
   }
-  .disable-button button{
-    cursor: default;
-    pointer-events: none; 
-    background-color: #e6e6e6;
-    color: #717171;
-  }
 </style>
 <style>
   /* CSS to initially hide the variants */
@@ -360,16 +354,13 @@
     display: none;
   }
 </style>
-<div>
+<div class="product-form__buttons">
   <div class="container-disponibilidad">
-    <p style="color: rgb(255, 115, 0); text-align: start;">
-      Antes de agregar/comprar una cerradura, ingrese su codigo postal en el siguiente cuadro para revisar la disponibilidad de instalacion en su area
-    </p>
-    <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP" style="filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.3));">
+    <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP">
     <button
       class="shopify-payment-button__button shopify-payment-button__button--unbranded BUz42FHpSPncCPJ4Pr_f jjzYeefyWpPZLH9pIgyw RWJ0IfBjxIhflh4AIrUw"
       onclick=  getDisponibilidad()>
-      Revisar Disponibilidad instalacion
+      Disponibilidad instalacion
     </button>
   </div>
   <div>
@@ -640,80 +631,46 @@
   </script>
 </section>
 <script>
-  var disabledButtons = document.getElementById("buy-buttons");
-  var disponible = document.querySelector('.disponible');
-  var NoDisponible = document.querySelector('.no-disponible');
-
-  var session = sessionStorage.getItem("instalacion")
-  
-  if(session!==null){
-    
-    var disponibilidad = document.querySelector('.container-disponibilidad');
-    var variantSection = document.querySelector('variant-radios');
-
-    disponibilidad.style.display = 'none'
-
-    if(session==="false"){
-      disponible.style.display = 'none'      
-      NoDisponible.style.display = 'block';
-    }else{
-      NoDisponible.style.display = 'none';
-      disponible.style.display = 'block'
-    }
-    variantSection.style.display =  'block';   
-  }else{
-    disabledButtons.classList.add("disable-button")
-  }
-  
-</script>
-<script>
   async function getDisponibilidad() {
-    
+   
     const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Rio Colorado","Hermosillo","Ciudad Juarez","Culiacán","Mazatlan",
     "Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","Leon","Saltillo","Monterrey","Apodaca","San Pedro Garza Garcia","General",
     "Escobedo","Guadalupe","San Nicolas de los Garza","Santa Catarina","Ciudad de Mexico","Puebla","Playa del Carmen"]
 
     const cp = document.getElementById('inputCP').value;
-    {% comment %} console.log(cp) {% endcomment %}
+    console.log(cp)
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
+    console.log(ciudad)
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
-    var disabledButtons = document.getElementById("buy-buttons");
+    var variantSection = document.querySelector('variant-radios');
 
-    try{
-      var variantSection = document.querySelector('variant-radios');
-      variantSection.style.display =  'block';
-    }
-    catch(e) {
-      console.error(e,"No variant buttons")
-    }
-
+    variantSection.style.display =  'block';
     let varChild = 0
     if (ciudades.includes(ciudad)) {
-      varChild = 0
+      varChild = 1
+      console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
-      sessionStorage.setItem("instalacion", true);
 
     } else {
-      varChild = 1
+      varChild = 0
+      console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
-      sessionStorage.setItem("instalacion", false);
     }
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
-    try{
-      disabledButtons.classList.remove("disable-button")
-      document.querySelector(radioCheck).click();
-    }
-    catch(e) {
-      console.error(e,"No variant buttons")
-    }
-    varChild=0
+    //console.log(radioCheck)
+
+    document.querySelector(radioCheck).click();
+
+    var productToggleItems = document.querySelector('.product-toggle-items')
+    productToggleItems.style.display = 'block'
+    varChild = 1
   }
 </script>
 {% schema %}
