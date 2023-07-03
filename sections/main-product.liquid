@@ -347,6 +347,12 @@
   color:white;
   padding: 5px;
   }
+  .disable-button button{
+    cursor: default;
+    pointer-events: none; 
+    background-color: #e6e6e6;
+    color: #717171;
+  }
 </style>
 <style>
   /* CSS to initially hide the variants */
@@ -634,18 +640,13 @@
   var disabledButtons = document.getElementById("buy-buttons");
   var disponible = document.querySelector('.disponible');
   var NoDisponible = document.querySelector('.no-disponible');
-
   var session = sessionStorage.getItem("instalacion")
   
-  var variantSection = document.querySelector('variant-radios');
-  variantSection.style.display =  'block'; 
   if(session!==null){
     
     var disponibilidad = document.querySelector('.container-disponibilidad');
     var variantSection = document.querySelector('variant-radios');
-
     disponibilidad.style.display = 'none'
-
     if(session==="false"){
       disponible.style.display = 'none'      
       NoDisponible.style.display = 'block';
@@ -657,16 +658,17 @@
   }else{
     disabledButtons.classList.add("disable-button")
   }
-
+  
 </script>
 <script>
   async function getDisponibilidad() {
+    
    
     const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Rio Colorado","Hermosillo","Ciudad Juarez","Culiacán","Mazatlan",
     "Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","Leon","Saltillo","Monterrey","Apodaca","San Pedro Garza Garcia","General",
     "Escobedo","Guadalupe","San Nicolas de los Garza","Santa Catarina","Ciudad de Mexico","Puebla","Playa del Carmen"]
-
     const cp = document.getElementById('inputCP').value;
+    {% comment %} console.log(cp) {% endcomment %}
     console.log(cp)
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
     const data = await res.json()
@@ -676,29 +678,46 @@
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
+    var disabledButtons = document.getElementById("buy-buttons");
+    try{
+      var variantSection = document.querySelector('variant-radios');
+      variantSection.style.display =  'block';
+    }
+    catch(e) {
+      console.error(e,"No variant buttons")
+    }
     var variantSection = document.querySelector('variant-radios');
-
     variantSection.style.display =  'block';
     let varChild = 0
     if (ciudades.includes(ciudad)) {
       varChild = 0
+      varChild = 1
       console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
-
+      sessionStorage.setItem("instalacion", true);
     } else {
       varChild = 1
+      varChild = 0
       console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
+      sessionStorage.setItem("instalacion", false);
     }
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
-
+    try{
+      disabledButtons.classList.remove("disable-button")
+      document.querySelector(radioCheck).click();
+    }
+    catch(e) {
+      console.error(e,"No variant buttons")
+    }
+    varChild=0
+    //console.log(radioCheck)
     document.querySelector(radioCheck).click();
-
     var productToggleItems = document.querySelector('.product-toggle-items')
     productToggleItems.style.display = 'block'
-    varChild=0
+    varChild = 1
   }
 </script>
 {% schema %}
