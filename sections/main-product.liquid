@@ -716,16 +716,16 @@
     }
 
 
-    let varChild = 0
+    let varChild = 1
     if (ciudades.includes(ciudad)) {
-      varChild = 0
+      varChild = 1
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
       sessionStorage.setItem("instalacion", true);
 
 
     } else {
-      varChild = 1
+      varChild = 0
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
       sessionStorage.setItem("instalacion", false);
@@ -738,7 +738,7 @@
     catch(e) {
       console.error(e,"No variant buttons")
     }
-    varChild=0
+    varChild=1
   }
 </script>
 {% schema %}
