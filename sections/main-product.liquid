@@ -631,6 +631,34 @@
   </script>
 </section>
 <script>
+  var disabledButtons = document.getElementById("buy-buttons");
+  var disponible = document.querySelector('.disponible');
+  var NoDisponible = document.querySelector('.no-disponible');
+
+  var session = sessionStorage.getItem("instalacion")
+  
+  if(session!==null){
+    
+    var disponibilidad = document.querySelector('.container-disponibilidad');
+    var variantSection = document.querySelector('variant-radios');
+
+    disponibilidad.style.display = 'none'
+
+    if(session==="false"){
+      disponible.style.display = 'none'      
+      NoDisponible.style.display = 'block';
+    }else{
+      NoDisponible.style.display = 'none';
+      disponible.style.display = 'block'
+    }
+    variantSection.style.display =  'block';   
+  }else{
+    disabledButtons.classList.add("disable-button")
+  }
+  
+  
+</script>
+<script>
   async function getDisponibilidad() {
    
     const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Rio Colorado","Hermosillo","Ciudad Juarez","Culiacán","Mazatlan",
