@@ -652,13 +652,13 @@
     variantSection.style.display =  'block';
     let varChild = 0
     if (ciudades.includes(ciudad)) {
-      varChild = 1
+      varChild = 0
       console.log("Su ciudad si cuenta con cobertura para instalacion")
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
 
     } else {
-      varChild = 0
+      varChild = 1
       console.log("Lo sentimos, su localidad no cuenta con cobertura")
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
@@ -670,7 +670,7 @@
 
     var productToggleItems = document.querySelector('.product-toggle-items')
     productToggleItems.style.display = 'block'
-    varChild = 1
+    varChild=0
   }
 </script>
 {% schema %}
