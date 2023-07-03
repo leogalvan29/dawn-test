@@ -646,15 +646,17 @@
     console.log("entro")
     var disponibilidad = document.querySelector('.container-disponibilidad');
     var variantSection = document.querySelector('variant-radios');
+    var productToggleItems = document.querySelector('.product-toggle-items')
+    
     disponibilidad.style.display = 'none'
     if(session==="false"){
       disponible.style.display = 'none'      
       NoDisponible.style.display = 'block';
-      variantSection.style.display =  'block';   
+      productToggleItems.style.display = 'block'   
     }else{
       NoDisponible.style.display = 'none';
       disponible.style.display = 'block'
-      variantSection.style.display =  'block';   
+      productToggleItems.style.display = 'block'  
     }
     
   }else{
