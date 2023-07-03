@@ -11,11 +11,13 @@
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
+
   {%- style -%}
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
+
 
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
@@ -25,6 +27,7 @@
     }
   {%- endstyle -%}
 
+
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {% if section.settings.image_zoom == 'hover' %}
@@ -33,6 +36,7 @@
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
+
 
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
@@ -53,7 +57,9 @@
     >
   {%- endif -%}
 
+
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
@@ -67,6 +73,7 @@
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
 
         {%- for block in section.blocks -%}
           {%- case block.type -%}
@@ -88,7 +95,7 @@
                   </h2>
                 </a>
               </div>
-            <div class='product-toggle-items' style="display:none;">
+            <div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
@@ -307,15 +314,17 @@
                 block: block,
                 share_link: share_url
               %}
+             
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+
+
             {%- when 'buy_buttons' -%}
+              <div id="buy-buttons">
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+              </div>
           </div>
  {% comment %} Disponibilidad codigo postal {% endcomment %}
- <p style="color: rgb(255, 115, 0); text-align: start;">
-  Antes de agregar articulos con instalacion, ingrese su codigo postal en el siguiente cuadro para revisar la disponibilidad en su area
-</p>
 <style>
   .container-disponibilidad {
     display: flex;
@@ -356,16 +365,19 @@
 <style>
   /* CSS to initially hide the variants */
   variant-radios {
-    {% comment %} display: none; {% endcomment %}
+    display: none;
   }
 </style>
-<div class="product-form__buttons">
+<div>
   <div class="container-disponibilidad">
-    <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP">
+    <p style="color: rgb(255, 115, 0); text-align: start;">
+      Antes de agregar/comprar una cerradura, ingrese su codigo postal en el siguiente cuadro para revisar la disponibilidad de instalacion en su area
+    </p>
+    <input type="text" placeholder="Introduce tu Codigo Postal" id="inputCP" style="filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.3));">
     <button
       class="shopify-payment-button__button shopify-payment-button__button--unbranded BUz42FHpSPncCPJ4Pr_f jjzYeefyWpPZLH9pIgyw RWJ0IfBjxIhflh4AIrUw"
       onclick=  getDisponibilidad()>
-      Disponibilidad instalacion
+      Revisar Disponibilidad instalacion
     </button>
   </div>
   <div>
@@ -515,7 +527,9 @@
     {%- endif -%}
   </div>
 
+
   {% render 'product-media-modal' variant_images: variant_images %}
+
 
   {% assign popups = section.blocks | where: 'type', 'popup' %}
   {%- for block in popups -%}
@@ -543,10 +557,12 @@
     </modal-dialog>
   {%- endfor -%}
 
+
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
+
 
   {%- if first_3d_model -%}
     <script type="application/json" id="ProductJSON-{{ product.id }}">
@@ -555,6 +571,7 @@
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
 
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       function isIE() {
@@ -562,8 +579,10 @@
         const msie = ua.indexOf('MSIE ');
         const trident = ua.indexOf('Trident/');
 
+
         return msie > 0 || trident > 0;
       }
+
 
       if (!isIE()) return;
       const hiddenInput = document.querySelector('#{{ product_form_id }} input[name="id"]');
@@ -576,11 +595,13 @@
       ).textContent;
       variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
 
+
       document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function (event) {
         hiddenInput.value = event.currentTarget.value;
       });
     });
   </script>
+
 
   {%- liquid
     if product.selected_or_first_available_variant.featured_media
@@ -589,6 +610,7 @@
       assign seo_media = product.featured_media
     endif
   -%}
+
 
   <script type="application/ld+json">
     {
@@ -639,24 +661,27 @@
   var disabledButtons = document.getElementById("buy-buttons");
   var disponible = document.querySelector('.disponible');
   var NoDisponible = document.querySelector('.no-disponible');
+
+
   var session = sessionStorage.getItem("instalacion")
   
   if(session!==null){
-    console.log("entro")
-    var disponibilidad = document.querySelector('.container-disponibilidad');
-    {% comment %} var variantSection = document.querySelector('variant-radios'); {% endcomment %}
-    var productToggleItems = document.querySelector('.product-toggle-items')
     
+    var disponibilidad = document.querySelector('.container-disponibilidad');
+    var variantSection = document.querySelector('variant-radios');
+
+
     disponibilidad.style.display = 'none'
+
+
     if(session==="false"){
       disponible.style.display = 'none'      
       NoDisponible.style.display = 'block';
-     
     }else{
       NoDisponible.style.display = 'none';
       disponible.style.display = 'block'
     }
-    productToggleItems.style.display = 'block'   
+    variantSection.style.display =  'block';   
   }else{
     disabledButtons.classList.add("disable-button")
   }
@@ -665,38 +690,42 @@
 <script>
   async function getDisponibilidad() {
     
-   
     const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Rio Colorado","Hermosillo","Ciudad Juarez","Culiacán","Mazatlan",
     "Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","Leon","Saltillo","Monterrey","Apodaca","San Pedro Garza Garcia","General",
     "Escobedo","Guadalupe","San Nicolas de los Garza","Santa Catarina","Ciudad de Mexico","Puebla","Playa del Carmen"]
-    const cp = document.getElementById('inputCP').value;
 
+
+    const cp = document.getElementById('inputCP').value;
+    {% comment %} console.log(cp) {% endcomment %}
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
-
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
     var disabledButtons = document.getElementById("buy-buttons");
+
+
     try{
       var variantSection = document.querySelector('variant-radios');
       variantSection.style.display =  'block';
     }
     catch(e) {
-      console.log("No variant product")
+      console.error(e,"No variant buttons")
     }
-    let varChild = 1
+
+
+    let varChild = 0
     if (ciudades.includes(ciudad)) {
-      varChild = 1
-      console.log("Su ciudad si cuenta con cobertura para instalacion")
+      varChild = 0
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
       sessionStorage.setItem("instalacion", true);
+
+
     } else {
-      varChild = 0
-      console.log("Lo sentimos, su localidad no cuenta con cobertura")
+      varChild = 1
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
       sessionStorage.setItem("instalacion", false);
@@ -709,10 +738,7 @@
     catch(e) {
       console.error(e,"No variant buttons")
     }
-    document.querySelector(radioCheck).click();
-    var productToggleItems = document.querySelector('.product-toggle-items')
-    productToggleItems.style.display = 'block'
-    varChild = 1
+    varChild=0
   }
 </script>
 {% schema %}
