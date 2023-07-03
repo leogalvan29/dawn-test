@@ -637,6 +637,8 @@
 
   var session = sessionStorage.getItem("instalacion")
   
+  var variantSection = document.querySelector('variant-radios');
+  variantSection.style.display =  'block'; 
   if(session!==null){
     
     var disponibilidad = document.querySelector('.container-disponibilidad');
@@ -691,7 +693,6 @@
       no_disponible.style.display = 'block'
     }
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
-    //console.log(radioCheck)
 
     document.querySelector(radioCheck).click();
 
