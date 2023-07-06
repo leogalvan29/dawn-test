@@ -690,9 +690,8 @@
 <script>
   async function getDisponibilidad() {
     
-    const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Rio Colorado","Hermosillo","Ciudad Juarez","Culiacán","Mazatlan",
-    "Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","Leon","Saltillo","Monterrey","Apodaca","San Pedro Garza Garcia","General",
-    "Escobedo","Guadalupe","San Nicolas de los Garza","Santa Catarina","Ciudad de Mexico","Puebla","Playa del Carmen"]
+    const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Río Colorado","Hermosillo","Ciudad Juárez","Culiacán","Mazatlán",    "Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","León","Saltillo","Monterrey","Apodaca","San Pedro Garza García","General",
+      "Escobedo","Guadalupe","San Nicolás de los Garza","Santa Catarina","Ciudad de México","Puebla","Playa del Carmen"]
 
 
     const cp = document.getElementById('inputCP').value;
@@ -701,6 +700,7 @@
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
+    
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
