@@ -707,8 +707,6 @@
       "Tlalpan",
       "Venustiano Carranza",
       "Xochimilco","Puebla","Playa del Carmen"]
-    
-
 
     const cp = document.getElementById('inputCP').value;
     {% comment %} console.log(cp) {% endcomment %}
@@ -716,7 +714,7 @@
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
-    console.log(ciudad)
+    {% comment %} console.log(ciudad) {% endcomment %}
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
