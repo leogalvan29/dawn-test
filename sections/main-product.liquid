@@ -356,12 +356,6 @@
   padding: 5px;
   }
 </style>
-<style>
-  /* CSS to initially hide the variants */
-  variant-radios {
-    display: none;
-  }
-</style>
 <div>
   <div class="container-disponibilidad">
     <p style="color: rgb(255, 115, 0); text-align: start;">
@@ -655,14 +649,12 @@
   var disponible = document.querySelector('.disponible');
   var NoDisponible = document.querySelector('.no-disponible');
 
-
   var session = sessionStorage.getItem("instalacion")
   
   if(session!==null){
     
     var disponibilidad = document.querySelector('.container-disponibilidad');
     var variantSection = document.querySelector('variant-radios');
-
 
     disponibilidad.style.display = 'none'
 
