@@ -655,7 +655,6 @@
   </script>
 </section>
 <script>
-  var disabledButtons = document.getElementById("buy-buttons");
   var disponible = document.querySelector('.disponible');
   var NoDisponible = document.querySelector('.no-disponible');
 
@@ -679,8 +678,6 @@
       disponible.style.display = 'block'
     }
     variantSection.style.display =  'block';   
-  }else{
-    disabledButtons.classList.add("disable-button")
   }
   
 </script>
@@ -701,7 +698,6 @@
     
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
-    var disabledButtons = document.getElementById("buy-buttons");
 
 
     try{
@@ -729,7 +725,6 @@
     }
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
     try{
-      disabledButtons.classList.remove("disable-button")
       document.querySelector(radioCheck).click();
     }
     catch(e) {
