@@ -688,23 +688,12 @@
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
 
-
-    try{
-      var variantSection = document.querySelector('variant-radios');
-      variantSection.style.display =  'block';
-    }
-    catch(e) {
-      console.error(e,"No variant buttons")
-    }
-
-
     let varChild = 1
     if (ciudades.includes(ciudad)) {
       varChild = 1
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
       sessionStorage.setItem("instalacion", true);
-
 
     } else {
       varChild = 0
