@@ -320,7 +320,7 @@
 
 
             {%- when 'buy_buttons' -%}
-              <div id="buy-buttons" onclick=sweetalert()>
+              <div id="buy-buttons" >
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
               </div>
           </div>
@@ -649,6 +649,15 @@
   import Swal from 'sweetalert2/dist/sweetalert2.js'
 
   import 'sweetalert2/src/sweetalert2.scss'
+    // Get the parent div element
+    var buybuttonsdiv = document.getElementById('buy-buttons');
+
+    // Attach a click event listener to the div
+    buybuttonsdiv.addEventListener('click', function(event) {
+      // Check if the clicked element is a button with the 'myButton' class
+        // Trigger your event handling code here
+       sweetalert()
+    });
 
   function sweetalert(){
     var readAlert = sessionStorage.getItem("readAlert")
