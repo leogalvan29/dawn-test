@@ -650,6 +650,7 @@
   import 'sweetalert2/src/sweetalert2.scss'
 </script>
 <script>
+  function getRadioSelected(){
     var radioButtons = document.querySelectorAll('input[name="Con Instalación"]');
     let selectedOption;
     for (const radioButton of radioButtons) {
@@ -658,10 +659,14 @@
             break;
         }
     }
+    console.log(selectedOption)
+    return selectedOption;
+  }
   var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
   button.onclick = function() {
     var readAlert = sessionStorage.getItem("readAlert")
     console.log(readAlert)
+    var radioSelected = getRadioSelected()
     if(readAlert===null){
       Swal.fire({
         title: 'Importante!',
