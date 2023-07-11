@@ -651,14 +651,14 @@
 </script>
 <script>
     {% comment %} Obtener la opcion de instalacion actual {% endcomment %}
-    const radioButtons = document.querySelectorAll('input[name="Con Instalación"]');
+    {% comment %} const radioButtons = document.querySelectorAll('input[name="Con Instalación"]');
     let selectedOption;
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
           selectedOption = radioButton.value;
-            {% comment %} break; {% endcomment %}
+            break;
         }
-    }
+    } {% endcomment %}
   
   var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
   button.onclick = function() {
