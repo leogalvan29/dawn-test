@@ -650,11 +650,22 @@
   import 'sweetalert2/src/sweetalert2.scss'
 </script>
 <script>
-
+       
+  const radioButtons = document.querySelectorAll('input[name="Con Instalación"]');
+  let selectedSize;
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+  console.log(selectedSize)
+  
   var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
+  
   button.onclick = function() {
     var readAlert = sessionStorage.getItem("readAlert")
-    console.log(readAlert)
+    
     if(readAlert===null){
       Swal.fire({
         title: 'Importante!',
