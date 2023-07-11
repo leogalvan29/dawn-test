@@ -645,6 +645,11 @@
     }
   </script>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+  import 'sweetalert2/src/sweetalert2.scss'
+</script>
 <script>
   var disponible = document.querySelector('.disponible');
   var NoDisponible = document.querySelector('.no-disponible');
@@ -709,6 +714,13 @@
       console.error(e,"No variant buttons")
     }
     varChild=1
+
+    Swal.fire({
+      title: 'Error!',
+      text: 'Do you want to continue',
+      icon: 'error',
+      confirmButtonText: 'Cool'
+    });
   }
 </script>
 {% schema %}
