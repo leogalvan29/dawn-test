@@ -645,19 +645,20 @@
     }
   </script>
 </section>
+<script>
+  var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
+
+  // Add an onclick event handler to the button
+  button.onclick = function() {
+    // Your code logic goes here
+    // This function will be executed when the button is clicked
+    console.log("Button clicked!");
+  };
+      
+</script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
   import Swal from 'sweetalert2/dist/sweetalert2.js'
   import 'sweetalert2/src/sweetalert2.scss'
-
-  var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
-
-// Add an onclick event handler to the button
-button.onclick = function() {
-  // Your code logic goes here
-  // This function will be executed when the button is clicked
-  console.log("Button clicked!");
-};
-    
 
   function sweetalert(){
     var readAlert = sessionStorage.getItem("readAlert")
