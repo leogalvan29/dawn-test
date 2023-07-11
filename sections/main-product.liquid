@@ -320,7 +320,7 @@
 
 
             {%- when 'buy_buttons' -%}
-              <div id="buy-buttons">
+              <div id="buy-buttons" onclick=sweetalert()>
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
               </div>
           </div>
@@ -649,6 +649,19 @@
   import Swal from 'sweetalert2/dist/sweetalert2.js'
 
   import 'sweetalert2/src/sweetalert2.scss'
+
+  function sweetalert(){
+    var readAlert = sessionStorage.getItem("readAlert")
+    if(readAlert===null){
+      Swal.fire({
+        title: 'Importante!',
+        text: 'Mensaje',
+        icon: 'warning',
+        confirmButtonText: 'Entendido'
+      });
+      sessionStorage.setItem("readAlert", true);
+    }
+  }
 </script>
 <script>
   var disponible = document.querySelector('.disponible');
@@ -714,13 +727,6 @@
       console.error(e,"No variant buttons")
     }
     varChild=1
-
-    Swal.fire({
-      title: 'Error!',
-      text: 'Do you want to continue',
-      icon: 'error',
-      confirmButtonText: 'Cool'
-    });
   }
 </script>
 {% schema %}
