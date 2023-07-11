@@ -650,17 +650,15 @@
   import 'sweetalert2/src/sweetalert2.scss'
 </script>
 <script>
-       
+  {% comment %} Obtener la opcion de instalacion actual {% endcomment %}
   const radioButtons = document.querySelectorAll('input[name="Con Instalación"]');
-  let selectedSize;
-            for (const radioButton of radioButtons) {
-                if (radioButton.checked) {
-                    selectedSize = radioButton.value;
-                    break;
-                }
-            }
-  console.log(selectedSize)
-  
+  let selectedOption;
+  for (const radioButton of radioButtons) {
+      if (radioButton.checked) {
+        selectedOption = radioButton.value;
+          break;
+      }
+  }
   var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
   
   button.onclick = function() {
@@ -669,8 +667,8 @@
     if(readAlert===null){
       Swal.fire({
         title: 'Importante!',
-        text: 'Mensaje',
-        icon: 'warning',
+        text: {selectedOption=="Si" ? "Mensaje con instalacion" : "Mensaje sin instalacion";},
+        icon: {selectedOption=="Si" ?'warning' : 'info'},
         confirmButtonText: 'Entendido'
       });
       sessionStorage.setItem("readAlert", true);
