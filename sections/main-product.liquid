@@ -654,23 +654,11 @@
   button.onclick = function() {
     var readAlert = sessionStorage.getItem("readAlert")
     console.log(readAlert)
-    
-      {% comment %} Obtener la opcion de instalacion actual {% endcomment %}
-  const radioButtons = document.querySelectorAll('input[name="Con Instalación"]');
-  let selectedOption;
-  for (const radioButton of radioButtons) {
-      if (radioButton.checked) {
-        selectedOption = radioButton.value;
-          break;
-      }
-  }
-
-  
     if(readAlert===null){
       Swal.fire({
         title: 'Importante!',
-        text: {selectedOption=="Si" ? "Mensaje con instalacion" : "Mensaje sin instalacion";},
-        icon: {selectedOption=="Si" ?'warning' : 'info'},
+        text: 'Mensaje',
+        icon: 'warning',
         confirmButtonText: 'Entendido'
       });
       sessionStorage.setItem("readAlert", true);
