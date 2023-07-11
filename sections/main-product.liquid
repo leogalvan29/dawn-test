@@ -653,7 +653,7 @@
   function getRadioSelected(){
     var radioButtons = document.querySelectorAll('input[name="Con Instalación"]');
     let selectedOption;
-    for (const radioButton of radioButtons) {
+    for (var radioButton of radioButtons) {
         if (radioButton.checked) {
           selectedOption = radioButton.value;
             break;
