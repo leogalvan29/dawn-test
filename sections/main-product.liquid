@@ -671,7 +671,7 @@
       Swal.fire({
         title: 'Importante!',
         text: 'Mensaje',
-        icon: 'warning',
+        icon: {radioSelected === "Si" ? 'warning' : 'info'},
         confirmButtonText: 'Entendido'
       });
       {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
