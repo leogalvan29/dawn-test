@@ -650,20 +650,18 @@
   import 'sweetalert2/src/sweetalert2.scss'
 </script>
 <script>
-  var radioButtons = document.querySelector(".product-form__input")
-  // Loop through all radio buttons
-  for (var i = 0; i < radioButtons.length; i++) {
-    if (radioButtons[i].checked) {
-      var selectedValue = radioButtons[i].value;
-      console.log("Selected Value: " + selectedValue);
-      break; // Exit the loop if a radio button is selected
-    }
-  }
-
   var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
   button.onclick = function() {
     var readAlert = sessionStorage.getItem("readAlert")
-    console.log(readAlert)
+    var radioButtons = document.querySelector(".product-form__input")
+    // Loop through all radio buttons
+    for (var i = 0; i < radioButtons.length; i++) {
+      if (radioButtons[i].checked) {
+        var selectedValue = radioButtons[i].value;
+        console.log("Selected Value: " + selectedValue);
+        break; // Exit the loop if a radio button is selected
+      }
+    }
     if(readAlert===null){
       Swal.fire({
         title: 'Importante!',
