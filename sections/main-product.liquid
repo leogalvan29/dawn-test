@@ -667,19 +667,19 @@
     var readAlert = sessionStorage.getItem("readAlert")
     console.log(readAlert)
     var radioSelected = getRadioSelected()
-    
+
     var SwalOptions;
     if(radioSelected==="Si"){
       SwalOptions = {
         title: 'Importante!',
-        text: 'Mensaje',
+        text: 'Mensaje con instlacion',
         icon: 'warning',
         confirmButtonText: 'Entendido'
       }
     }else{
       SwalOptions = {
         title: 'Importante!',
-        text: 'Mensaje',
+        text: 'Mensaje sin instalacion' ,
         icon: 'info',
         confirmButtonText: 'Entendido'
       }
