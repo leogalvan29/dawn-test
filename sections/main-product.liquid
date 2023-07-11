@@ -649,12 +649,7 @@
   var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
   // Add an onclick event handler to the button
   button.onclick = function() {
-    Swal.fire({
-      title: 'Importante!',
-      text: 'Mensaje',
-      icon: 'warning',
-      confirmButtonText: 'Entendido'
-    });
+    sweetalert();
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
@@ -663,6 +658,7 @@
 
   function sweetalert(){
     var readAlert = sessionStorage.getItem("readAlert")
+    console.log(readAlert)
     if(readAlert===null){
       Swal.fire({
         title: 'Importante!',
