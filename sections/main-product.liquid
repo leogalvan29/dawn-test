@@ -655,8 +655,7 @@
     // Attach a click event listener to the div
     buybuttonsdiv.addEventListener('click', function(event) {
       // Check if the clicked element is a button with the 'myButton' class
-      if (event.target.classList.contains('product-form__submit') || 
-      event.target.classList.contains("button.shopify-payment-button__button--unbranded")) {
+      if (event.target.tagName === 'BUTTON'){
         // Trigger your event handling code here
         console.log("Alerta")
        sweetalert()
