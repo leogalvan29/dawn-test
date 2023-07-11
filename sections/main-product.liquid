@@ -657,10 +657,8 @@
     if(readAlert===null){
       Swal.fire({
         title: 'Importante!',
-        text: 'Texto',
+        text: 'Mensaje',
         icon: 'warning',
-        {% comment %} text: {selectedOption == "Si" ? 'Mensaje con instalacion' : 'Mensaje sin instalacion'},
-        icon: {selectedOption == "Si" ? 'warning' : 'info'}, {% endcomment %}
         confirmButtonText: 'Entendido'
       });
       sessionStorage.setItem("readAlert", true);
