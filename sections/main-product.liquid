@@ -659,10 +659,11 @@
           break;
       }
   }
+
   var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
-  
   button.onclick = function() {
     var readAlert = sessionStorage.getItem("readAlert")
+    console.log(readAlert)
     
     if(readAlert===null){
       Swal.fire({
