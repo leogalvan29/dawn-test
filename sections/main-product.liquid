@@ -670,8 +670,8 @@
     if(readAlert===null){
       Swal.fire({
         title: 'Importante!',
-        text: {radioSelected == "Si" ? 'Mensaje con instalacion' : 'Mensaje sin instalacion'},
-        icon: {radioSelected == "Si" ? 'warning' : 'info'},
+        text: 'Mensaje',
+        icon: 'warning',
         confirmButtonText: 'Entendido'
       });
       {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
