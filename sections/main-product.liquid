@@ -645,13 +645,6 @@
     }
   </script>
 </section>
-<script>
-  var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
-  // Add an onclick event handler to the button
-  button.onclick = function() {
-    sweetalert();
-  };
-</script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
   import Swal from 'sweetalert2/dist/sweetalert2.js'
   import 'sweetalert2/src/sweetalert2.scss'
@@ -669,6 +662,13 @@
       sessionStorage.setItem("readAlert", true);
     }
   }
+</script>
+<script>
+  var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
+  // Add an onclick event handler to the button
+  button.onclick = function() {
+    sweetalert();
+  };
 </script>
 <script>
   var disponible = document.querySelector('.disponible');
