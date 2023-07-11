@@ -667,13 +667,25 @@
     var readAlert = sessionStorage.getItem("readAlert")
     console.log(readAlert)
     var radioSelected = getRadioSelected()
-    if(readAlert===null){
-      Swal.fire({
+    
+    var SwalOptions;
+    if(radioSelected==="Si"){
+      SwalOptions = {
         title: 'Importante!',
         text: 'Mensaje',
-        icon: {radioSelected === "Si" ? 'warning' : 'info'},
+        icon: 'warning',
         confirmButtonText: 'Entendido'
-      });
+      }
+    }else{
+      SwalOptions = {
+        title: 'Importante!',
+        text: 'Mensaje',
+        icon: 'info',
+        confirmButtonText: 'Entendido'
+      }
+    }
+    if(readAlert===null){
+      Swal.fire(SwalOptions);
       {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
     }
   };
