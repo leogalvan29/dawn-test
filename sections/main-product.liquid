@@ -695,6 +695,7 @@
         if (result.isConfirmed) {
           var inputCP = document.getElementById('inputCP');
           inputCP.focus();
+          return
         }
       });
       {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
