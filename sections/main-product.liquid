@@ -695,7 +695,8 @@
         if (result.isConfirmed) {
           // Handle the confirmed action here
           {% comment %} document.getElementById('inputCP').click(); {% endcomment %}
-          document.querySelector('#inputCP').focus();
+          var inputCP = document.getElementById('inputCP');
+          inputCP.focus();
         }
       });
       {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
