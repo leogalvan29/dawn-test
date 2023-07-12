@@ -673,24 +673,21 @@
       SwalOptions = {
         title: 'Importante!',
         showDenyButton: true,
-        showCancelButton: true,
+
         text: 'Antes de avanzar con el pago, ¿Validaste que en tu código postal tenemos cobertura de instalación? Favor de validar tu código postal en la sección inferior de la pagina de producto.',
         icon: 'warning',
         confirmButtonText: 'Validar codigo postal',
-        cancelButtonText: 'Ya valide y deseo continuar',
-
+        denyButtonText: 'Ya valide y deseo continuar',
 
       }
     }else{
       SwalOptions = {
         title: 'Importante!',
         showDenyButton: true,
-        showCancelButton: true,
         text: 'Recuerda que contamos con servicio de instalación en las principales ciudades de México. Puedes validar tu código postal, revisar si esta disponible y agregar tu instalación en tu compra. ' ,
         icon: 'info',
         confirmButtonText: 'Validar codigo postal',
-        cancelButtonText: 'Deseo comprar sin instalacion',
-
+        denyButtonText: 'Deseo comprar sin instalacion',
       }
     }
     if(readAlert===null){
