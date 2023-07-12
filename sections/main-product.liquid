@@ -687,7 +687,12 @@
       }
     }
     if(readAlert===null){
-      Swal.fire(SwalOptions);
+      Swal.fire(SwalOptions).then((result) => {
+        if (result.isConfirmed) {
+          // Handle the confirmed action here
+          document.getElementById('inputCP').focus();
+        }
+      });
       {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
     }
   };
