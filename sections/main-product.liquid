@@ -693,8 +693,6 @@
     if(readAlert===null){
       Swal.fire(SwalOptions).then((result) => {
         if (result.isConfirmed) {
-          // Handle the confirmed action here
-          {% comment %} document.getElementById('inputCP').click(); {% endcomment %}
           var inputCP = document.getElementById('inputCP');
           inputCP.focus();
         }
