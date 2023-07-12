@@ -694,7 +694,7 @@
       Swal.fire(SwalOptions).then((result) => {
         if (result.isConfirmed) {
           // Handle the confirmed action here
-          document.getElementById('inputCP').focus();
+          document.getElementById('inputCP').click();
         }
       });
       {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
