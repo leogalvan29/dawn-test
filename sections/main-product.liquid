@@ -694,11 +694,11 @@
       Swal.fire(SwalOptions).then((result) => {
         if (result.isConfirmed) {
           var inputCP = document.getElementById('inputCP');
+                {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
           inputCP.focus();
           return
         }
       });
-      {% comment %} sessionStorage.setItem("readAlert", true); {% endcomment %}
     }
   };
 </script>
