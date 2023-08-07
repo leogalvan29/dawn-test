@@ -748,10 +748,9 @@
      disponible.style.display = 'none'
      no_disponible.style.display = 'block'
      sessionStorage.setItem("instalacion", false);
+     return
     }
-
     const data = await res.json()
-    console.log(data)
     const isCovered = false;
     const ciudad = data[0].response.municipio
     {% comment %} console.log(ciudad) {% endcomment %}
@@ -762,7 +761,6 @@
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
       sessionStorage.setItem("instalacion", true);
-
     } else {
       varChild = 0
       disponible.style.display = 'none'
