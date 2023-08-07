@@ -737,16 +737,16 @@
 
     const cp = document.getElementById('inputCP').value;
     {% comment %} console.log(cp) {% endcomment %}
-    let ciudad = 0;
     try{
-      const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`).catch(error => console.log(error))
-      const data = await res.json()
-      const isCovered = false;
-      ciudad = data[0].response.municipio
+      const data = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
+      .then(response => response.json())
+      .catch(error => console.log(error))
     }catch(error){
       console.log(error)
     }
     
+    const isCovered = false;
+    const ciudad = data[0].response.municipio
     {% comment %} console.log(ciudad) {% endcomment %}
     
     var disponible = document.querySelector('.disponible');
