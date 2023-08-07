@@ -750,11 +750,11 @@
      sessionStorage.setItem("instalacion", false);
      return
     }
-    
+
     const data = await res.json()
     const isCovered = false;
     const ciudad = data[0].response.municipio
-    {% comment %} console.log(ciudad) {% endcomment %}
+    console.log(ciudad)
 
     let varChild = 1
     if (ciudades.includes(ciudad)) {
