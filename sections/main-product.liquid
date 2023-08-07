@@ -743,6 +743,7 @@
       .catch(error => console.log(error.error_message))
     }catch(error){
       console.log(error.error_message)
+      throw new Error(error)
     }
     
     const isCovered = false;
