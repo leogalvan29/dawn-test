@@ -743,7 +743,7 @@
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
 
-    if(!response.ok){
+    if(!res.ok){
      vadisponible.style.display = 'none'
      no_disponible.style.display = 'block'
      sessionStorage.setItem("instalacion", false);
