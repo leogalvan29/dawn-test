@@ -739,6 +739,7 @@
     {% comment %} console.log(cp) {% endcomment %}
 
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
+    console.log(res.ok)
 
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
