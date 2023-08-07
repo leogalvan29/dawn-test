@@ -739,27 +739,21 @@
     {% comment %} console.log(cp) {% endcomment %}
 
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response;
-    })
-    .catch(error => {
-      // Handle the error without logging to the console
-      // You can choose to display a user-friendly error message or perform other actions here
-      // For example:
-      console.error('An error occurred:', error.message);
-    });
-    
+
+    var disponible = document.querySelector('.disponible');
+    var no_disponible = document.querySelector('.no-disponible');
+
+    if(!response.ok){
+     vadisponible.style.display = 'none'
+     no_disponible.style.display = 'block'
+     sessionStorage.setItem("instalacion", false);
+    }
+
     const data = await res.json()
     console.log(data)
     const isCovered = false;
     const ciudad = data[0].response.municipio
     {% comment %} console.log(ciudad) {% endcomment %}
-    
-    var disponible = document.querySelector('.disponible');
-    var no_disponible = document.querySelector('.no-disponible');
 
     let varChild = 1
     if (ciudades.includes(ciudad)) {
