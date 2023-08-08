@@ -359,7 +359,7 @@
 <div>
   <div class="container-disponibilidad">
     <p style="color: rgb(255, 115, 0); text-align: start;">
-     Revisar disponibilidad de instalación en mi área
+      Antes de agregar/comprar una cerradura, ingrese su código postal en el siguiente cuadro para revisar la disponibilidad de instalación en su área 
     </p>
     <input type="text" placeholder="Introduce tu código postal" id="inputCP" style="filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.3));">
     <button
@@ -646,12 +646,16 @@
   </script>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  //importar la libreria de Sweet Alert 2
   import Swal from 'sweetalert2/dist/sweetalert2.js'
   import 'sweetalert2/src/sweetalert2.scss'
 </script>
 <script>
+  //Funcion para mostrar alertas en base a la variante de instalacion
   function getRadioSelected(){
+    //Elemento que contiene los radio buttons de las variantes de instalacion
     var radioButtons = document.querySelectorAll('input[name="Con Instalación"]');
+    //Ciclo for sobre los radio buttons para saber cual esta seleccionado y obtener su valor
     let selectedOption;
     for (var radioButton of radioButtons) {
         if (radioButton.checked) {
@@ -659,27 +663,31 @@
             break;
         }
     }
-    console.log(selectedOption)
+    //Retorna la variante de instalacion seleccionada
     return selectedOption;
   }
+  //Agreamos el evento onClick al boton de Agregar al carrito
   var button = document.getElementById("ProductSubmitButton-template--19257811796253__main");
+
   button.onclick = function() {
+    //Obtenemos de session storage "readAlert" (en caso de ya haber leido la alerta previamente)
+    //Y la variante de instalacion seleccionada actualmente
     var readAlert = sessionStorage.getItem("readAlert")
-    console.log(readAlert)
     var radioSelected = getRadioSelected()
 
+    //Variante SwalOptions que sera objeto con los atributos de la alerta
     var SwalOptions;
+    //Si la variante de instalacion es "Si"
     if(radioSelected==="Si"){
       SwalOptions = {
         title: '¿Validaste tu codigo postal?',
         showDenyButton: true,
-
         text: 'Antes de avanzar con el pago, ¿Validaste que en tu código postal tenemos cobertura de instalación? Favor de validar tu código postal en la sección inferior de la pagina de producto.',
         icon: 'warning',
         confirmButtonText: 'Validar código postal',
         denyButtonText: 'Ya valide y deseo continuar',
-
       }
+      //Si la variante de instalacion es "No"
     }else{
       SwalOptions = {
         title: '¡Importante!',
@@ -690,55 +698,58 @@
         denyButtonText: 'Deseo comprar sin instalación',
       }
     }
+    //Si en session storage no hubo "readAlert", significa que no ha aparecido la alerta previamente 
     if(readAlert===null){
+      //Mostrar la alerta con el objeto se creo anteriormente
       Swal.fire(SwalOptions).then((result) => {
+        //Si selecciona "Validar codigo postal"
         if (result.isConfirmed) {
+          //Pone el cursor en el input para revisar la disponibilidad de instalacion despues de 0.5 seg
           var inputCP = document.getElementById('inputCP');
           setTimeout(() => {
             inputCP.focus();
           }, 500);
         }
+        //Todo lo anterior no previene que el item se agregue al carrito de Shopify, ya que eso lo maneja directamente Shopify
       });
+        //Guardar en session storage para no mostrarlo en futuros productos que el usuario agregue al carrito
       sessionStorage.setItem("readAlert", true);
     }
   };
 </script>
 <script>
+  //Al cargar la pagina del producto
+  //Obtener ambos elementos para Si/No instalacion
   var disponible = document.querySelector('.disponible');
   var NoDisponible = document.querySelector('.no-disponible');
 
+  //Obetenemos la variable "instalacion" en localStorage
+  //Si se reviso el codigo postal en un producto anterior, se guardara aqui
   var session = sessionStorage.getItem("instalacion")
-  
+  //Si no es nulo (por que ya se reviso el codigo postal)
   if(session!==null){
-    
+    //contenedor del estatus de disponibildad
     var disponibilidad = document.querySelector('.container-disponibilidad');
-    var variantSection = document.querySelector('variant-radios');
-
     disponibilidad.style.display = 'none'
 
-
+    //Si session es "false", no esta disponible
+    //Y si es true, esta disponible
     if(session==="false"){
       disponible.style.display = 'none'      
       NoDisponible.style.display = 'block';
     }else{
       NoDisponible.style.display = 'none';
       disponible.style.display = 'block'
-    }
-    variantSection.style.display =  'block';   
+    }   
   }
-  
 </script>
 <script>
   async function getDisponibilidad() {
-    
-    {% comment %} const ciudades = ["Tijuana","Rosarito","Ensenada","Francisco Zarco","Tecate","Mexicali","San Luis Río Colorado","Hermosillo","Ciudad Juárez","Culiacán","Mazatlán",    "Puerto Vallarta","Nuevo Vallarta","Bucerias","Guadalajara","Zapopan","Tlaquepaque","Tonala","León","Saltillo","Monterrey","Apodaca","San Pedro Garza García","General",
-      "Escobedo","Guadalupe","San Nicolás de los Garza","Santa Catarina","Ciudad de México","Álvaro Obregón","Azcapotzalco","Benito Juárez","Coyoacán","Cuajimalpa de Morelos","Cuauhtémoc","Gustavo A. Madero","Iztacalco",
-      "Iztapalapa","La Magdalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco","Puebla","Playa del Carmen"]
-     {% endcomment %}
+    //array de los municipios que cuentan con servicio de instalacion
     const ciudades = 
     ["Mexicali","Tijuana","Playas de Rosarito","Ensenada",
       "Juárez",
-      "Azcapotzalco","Benito Juárez","Coyoacán","Cuauhtémoc","Gustavo A. Madero","Iztacalco","Iztapalapia","La Magdalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco",
+      "Azcapotzalco","Benito Juárez","Coyoacán","Cuauhtémoc","Gustavo A. Madero","Iztacalco","Iztapalapa","La Magdalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco",
       "Saltillo",
       "León",
       "Monterrey","San Pedro Garza García","Santa Catarina","San Nicolás de los Garza","Apodaca","Guadalupe","General Escobedo",
@@ -749,37 +760,48 @@
       "Guadalajara","Zapopan","San Pedro Tlaquepaque","Puerto Vallarta",
       "Bahía de Banderas"
       ]
+    //Obtener el codigo postal que introdujo el usuario
     const cp = document.getElementById('inputCP').value;
-
+    //Hace la peticion a la API de Codigos postales 
     const res = await fetch(`https://api.copomex.com/query/info_cp/${cp}?token=59f3e896-bd12-4aa2-88df-60a3883d1035`)
-    console.log(res.ok)
-
+    //Obtenemos estos dos elementos para manipular su visibildad en base a la disponibildad
     var disponible = document.querySelector('.disponible');
     var no_disponible = document.querySelector('.no-disponible');
-
+    //si la respuesta de la API no es ok(status:200-209)
     if(!res.ok){
+    //Hace visible el elemento de "no_dispobile"
      disponible.style.display = 'none'
      no_disponible.style.display = 'block'
+     //Guarda en sessionStorage la respuesta para no volver a validar en otros productos durante el resto de la sesion
      sessionStorage.setItem("instalacion", false);
      return
     }
-
+    //Si le respuesta de la API es ok
+    //Se vuelve JSON y obtenemos la primer ciudad/municipio del array
     const data = await res.json()
-    const isCovered = false;
     const ciudad = data[0].response.municipio
-
+    //variable que determinara sobre que vairante "Instalación" del producto se seleccionara
     let varChild = 1
+    //Si la ciudad que nos regreso la API se encuentra en el array de cobertura de instalacion
     if (ciudades.includes(ciudad)) {
+      //Seleccionara la opcion "Instalacion: Si" 
+      //Mostrara el mensaje de "instalación disponible en su ciudad " 
+      //Guardara el resultado en session storage
       varChild = 1
       no_disponible.style.display = 'none'
       disponible.style.display = 'block'
       sessionStorage.setItem("instalacion", true);
     } else {
+      //Si no se encuentra en el array
+      //Seleccionara la opcion "Instalacion: No" 
+      //Mostrara el mensaje de "instalación no disponible en su ciudad " 
+      //Guardara el resultado en session storage
       varChild = 0
       disponible.style.display = 'none'
       no_disponible.style.display = 'block'
       sessionStorage.setItem("instalacion", false);
     }
+    //Hace click sobre el radio button de instalacion en base al if anterior
     const radioCheck = `#template--19257811796253__main-1-${varChild}`
     try{
       document.querySelector(radioCheck).click();
@@ -787,6 +809,7 @@
     catch(e) {
       console.error(e,"No variant buttons")
     }
+    //Lo regrsamos a 1
     varChild=1
   }
 </script>
